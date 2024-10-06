@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "name": "C/C++: g++.exe build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args": [
+        "-ID:/mysql9.0.0-64/include", // Base include directory for headers
+        "-ID:/mysql9.0.0-64/include/jdbc", // Additional include directory for jdbc folder
+        "-LD:/mysql9.0.0-64/lib64/vs14", // Linker library path for VS14 version
+        "-lmysqlcppconn-static"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "C/C++: g++.exe build active file"
+    }
+  ],
+  "version": "2.0.0"
+}

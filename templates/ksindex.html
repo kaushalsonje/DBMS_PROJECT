@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='kstyles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        <nav>
+            <a href="/add_book">Add Book</a>
+            <a href="/search">Search Books</a>
+            <a href="/add_member">Add Member</a>
+            <a href="/update_member">Update Member</a>
+            <a href="/members">List Members</a>
+            <a href="/issue_book">Issue Book</a> <!-- Added Issue Book link -->
+            <a href="/return_book">Return Book</a> <!-- Added Return Book link -->
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Container Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Form Styling */
+form {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+form input[type="text"],
+form input[type="number"],
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Button Styles */
+button,
+a.btn {
+  padding: 10px;
+  background-color: #007bff; /* Button background color */
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin-top: 5px;
+  text-align: center;
+  display: inline-block; /* Make links behave like buttons */
+  width: 100%; /* Full width for buttons */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+button:hover,
+a.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Search Results and Book List Styling */
+ul {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+ul li {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f1f1f1;
+  border-left: 4px solid #007bff;
+  border-radius: 4px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Issue/Return Status Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+table th {
+  background-color: #007bff;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Message Styling */
+p {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}

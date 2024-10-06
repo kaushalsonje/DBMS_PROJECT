@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+
+        <h2>Search for a Book</h2>
+        <form action="/search" method="POST">
+            <input type="text" name="query" placeholder="Search by title or author">
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>Add a New Book</h2>
+        <form action="/add_book" method="POST">
+            <input type="text" name="title" placeholder="Book Title" required>
+            <input type="text" name="author" placeholder="Author" required>
+            <button type="submit">Add Book</button>
+        </form>
+
+        <h2>Add a New Member</h2>
+        <form action="/add_member" method="POST">
+            <input type="text" name="name" placeholder="Member Name" required>
+            <button type="submit">Add Member</button>
+        </form>
+
+        <h2>Update Member Information</h2>
+        <form action="/update_member" method="POST">
+            <input type="number" name="member_id" placeholder="Member ID" required>
+            <input type="text" name="new_name" placeholder="New Member Name" required>
+            <button type="submit">Update Member</button>
+        </form>
+
+        <h2>Issue a Book</h2>
+        <form action="/issue_book" method="POST">
+            <input type="number" name="book_id" placeholder="Book ID" required>
+            <input type="text" name="member_name" placeholder="Member Name" required>
+            <button type="submit">Issue Book</button>
+        </form>
+
+        <h2>Return a Book</h2>
+        <form action="/return_book" method="POST">
+            <input type="number" name="book_id" placeholder="Book ID" required>
+            <button type="submit">Return Book</button>
+        </form>
+
+        <h2>View Issue/Return Status</h2>
+        <a href="/issue_return_status">View Issue/Return Status</a>
+
+        {% if books %}
+        <h3>Search Results:</h3>
+        <ul>
+            {% for book in books %}
+            <li>{{ book[1] }} by {{ book[2] }} {% if book[3] %} - Issued to {{ book[4] }} on {{ book[5] }}{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if issue_return %}
+        <h3>Issue/Return Status:</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Issued To</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+            </tr>
+            {% for book in issue_return %}
+            <tr>
+                <td>{{ book[0] }}</td>
+                <td>{{ book[1] }}</td>
+                <td>{{ book[2] }}</td>
+                <td>{{ book[4] }}</td>
+                <td>{{ book[5] }}</td>
+                <td>{{ book[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

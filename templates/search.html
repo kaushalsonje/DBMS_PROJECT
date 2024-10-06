@@ -1,0 +1,27 @@
+<!-- templates/search.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Books</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='kstyles.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+
+</head>
+
+<body>
+    <h1>Search for a Book</h1>
+
+    <form action="{{ url_for('search') }}" method="POST">
+        <label for="search_query">Search by Title or Author:</label>
+        <input type="text" name="search_query" id="search_query" required><br><br>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+
+</html>

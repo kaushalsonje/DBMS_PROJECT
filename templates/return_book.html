@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book</title>
+    <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+    <link rel="stylesheet" href="/static/return.css">
+</head>
+
+<body>
+    <h1>Return Book</h1>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li style="color: green;">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('return_book') }}" method="POST">
+        <label for="book_id">Book ID:</label>
+        <input type="text" name="book_id" id="book_id" required><br><br>
+
+        <button type="submit">Return Book</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+
+</html>

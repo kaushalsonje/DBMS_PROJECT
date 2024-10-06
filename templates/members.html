@@ -1,0 +1,30 @@
+<!-- templates/members.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Members</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='kstyles.css') }}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='members.css') }}">
+
+</head>
+
+<body>
+    <h1>All Members</h1>
+
+    <ul>
+        {% if members %}
+        {% for member in members %}
+        <li>{{ member['name'] }} ({{ member['email'] }})</li>
+        {% endfor %}
+        {% else %}
+        <li>No members found.</li>
+        {% endif %}
+    </ul>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+
+</html>
